@@ -1,10 +1,39 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>vista</ion-title>
+    <ion-title>Vista</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button expand="block" routerLink="/home">Inicio</ion-button>
-</ion-content>
 
+  <div class="contenedor">
+    <form>
+      <ion-input type="number" name="id_libro" [(ngModel)]="id_libro" placeholder="Id libro"></ion-input>
+      <ion-button type="reset" (click)="buscarLibro(id_libro)" expand="block">Mostrar</ion-button>
+    </form>
+    <hr>
+    <ion-button expand="block" routerLink="/home">Volver</ion-button>
+    <hr>
+    
+    <ng-container *ngIf="libros.length > 0">
+      <h5>Listado libros</h5>
+      <hr>
+      <table>
+        <tr>
+          <th>Título</th>
+          <th>Autor</th>
+          <th>Tipo</th>
+          <th>Precio</th>
+        </tr>
+        <tr *ngFor="let libro of libros">
+          <td>{{libro.titulo}}</td>
+          <td>{{libro.autor}}</td>
+          <td>{{libro.tipo}}</td>
+          <td>{{libro.precio}}</td>
+        </tr>        
+      </table>      
+    </ng-container>
+    
+
+  </div>
+</ion-content>

@@ -1,9 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>formulario</ion-title>
+    <ion-title>Formulario</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button expand="block" routerLink="/home">Inicio</ion-button>
+
+  <div class="contenedor">
+    <form>
+      <ion-input type="text" name="titulo" [(ngModel)]="libro.titulo" placeholder="Título"></ion-input>
+      <ion-input type="text" name="tipo" [(ngModel)]="libro.tipo" placeholder="Tipo"></ion-input>
+      <ion-input type="text" name="autor" [(ngModel)]="libro.autor" placeholder="Autor"></ion-input>
+      <ion-input type="number" name="precio" [(ngModel)]="libro.precio" placeholder="Precio"></ion-input>
+      <ion-input type="text" name="foto" [(ngModel)]="libro.foto" placeholder="Foto"></ion-input>
+      <ion-input type="number" name="id_libro" [(ngModel)]="libro.id_libro" placeholder="Id libro (modificar/borrar)"></ion-input>
+      <ion-button type="reset" (click)="agregarLibro()" expand="block">Agregar</ion-button>
+      <ion-button type="reset" (click)="modificarLibro()" expand="block">Modificar</ion-button>
+      <ion-button type="reset" (click)="borrarLibro(libro.id_libro)" color="danger" expand="block" >Borrar</ion-button>
+    </form>
+    <hr>
+    <ion-button expand="block" routerLink="/home">Volver</ion-button>
+  </div>
 </ion-content>
