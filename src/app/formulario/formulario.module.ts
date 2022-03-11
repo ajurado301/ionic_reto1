@@ -13,7 +13,7 @@ import { FormularioPage } from './formulario.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    FormularioPageRoutingModule
+    FormularioPageRoutingModule,
   ],
   declarations: [FormularioPage]
 })
